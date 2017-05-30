@@ -1,12 +1,16 @@
-package com.example.troygbv.discoverymuseum;
+package com.example.troygbv.discoverymuseum.Home;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.troygbv.discoverymuseum.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -20,6 +24,7 @@ public class FragmentVisitUs extends Fragment {
 
     MapView mMapView;
     private GoogleMap googleMap;
+    Button memberButton;
 
     public FragmentVisitUs() {
         //required empty fragment
@@ -34,6 +39,15 @@ public class FragmentVisitUs extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_fragment_visit_us, container, false);
+
+        memberButton = (Button)view.findViewById(R.id.memberButton);
+        memberButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.iexploremore.com/membership"));
+                startActivity(browserIntent);
+            }
+        });
 
         mMapView = (MapView) view.findViewById(R.id.mapView);
         mMapView.onCreate(savedInstanceState);

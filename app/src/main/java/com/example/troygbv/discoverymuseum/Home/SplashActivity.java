@@ -1,4 +1,4 @@
-package com.example.troygbv.discoverymuseum;
+package com.example.troygbv.discoverymuseum.Home;
 
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -7,6 +7,9 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ProgressBar;
+
+import com.example.troygbv.discoverymuseum.R;
+
 import org.apache.commons.io.IOUtils;
 import java.io.IOException;
 import java.io.InputStream;

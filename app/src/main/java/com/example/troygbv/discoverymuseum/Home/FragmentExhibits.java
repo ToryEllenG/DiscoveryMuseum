@@ -1,4 +1,4 @@
-package com.example.troygbv.discoverymuseum;
+package com.example.troygbv.discoverymuseum.Home;
 
 import android.content.Intent;
 import android.support.annotation.Nullable;
@@ -21,6 +21,7 @@ import com.example.troygbv.discoverymuseum.Exhibits.Science;
 import com.example.troygbv.discoverymuseum.Exhibits.SuperService;
 import com.example.troygbv.discoverymuseum.Exhibits.TVStudio;
 import com.example.troygbv.discoverymuseum.Exhibits.Theater;
+import com.example.troygbv.discoverymuseum.R;
 
 import java.util.ArrayList;
 

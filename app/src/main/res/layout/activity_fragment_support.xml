@@ -4,19 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.troygbv.discoverymuseum.FragmentSupport">
+    tools:context="com.example.troygbv.discoverymuseum.Home.FragmentSupport">
 
-    <TextView
-        android:id="@+id/textView4"
+    <ImageButton
+        android:id="@+id/donateButton"
+        style="@android:style/Widget.Holo.Light.ImageButton"
+        android:layout_width="198dp"
+        android:layout_height="178dp"
+        android:background="@null"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/donate"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintVertical_bias="0.457" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/quote"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/donateButton"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintVertical_bias="0.56" />
+
+    <Button
+        android:id="@+id/supportBT"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Support Us"
+        android:layout_marginTop="62dp"
+        android:text="Click here to find more ways to support us!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/donateButton"
+        app:layout_constraintVertical_bias="0.0" />
+
 </android.support.constraint.ConstraintLayout>

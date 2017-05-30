@@ -10,22 +10,35 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyC3-DvhWcLGrSpkOMjcXoSpeQmQTF3Mj80"
-            />
+            android:value="AIzaSyC3-DvhWcLGrSpkOMjcXoSpeQmQTF3Mj80" />
 
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".FragmentAbout" />
-        <activity android:name=".FragmentExhibits" />
-        <activity android:name=".FragmentPrograms" />
-        <activity android:name=".FragmentSupport" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".Home.MainActivity" />
+        <activity android:name=".Home.FragmentAbout" />
+        <activity android:name=".Home.FragmentExhibits" />
+        <activity android:name=".Home.FragmentPrograms" />
+        <activity android:name=".Home.FragmentSupport" />
+        <activity android:name=".Home.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FragmentVisitUs"></activity>
+        <activity android:name=".Home.FragmentVisitUs" />
+        <activity android:name=".Exhibits.Kitchen" />
+        <activity android:name=".Exhibits.Construct" />
+        <activity android:name=".Exhibits.MedicalCenter" />
+        <activity android:name=".Exhibits.TVStudio" />
+        <activity android:name=".Exhibits.Science" />
+        <activity android:name=".Exhibits.SuperService" />
+        <activity android:name=".Exhibits.Theater" />
+        <activity android:name=".Exhibits.Farm" />
+        <activity android:name=".Exhibits.ArtSmart" />
+        <activity android:name=".Exhibits.Meadow" />
+        <activity android:name=".Exhibits.Outdoors" />
+        <activity android:name=".Exhibits.Dentist" />
+        <activity android:name=".Games.KitchenGame" />
+        <activity android:name=".Games.SuperServiceGame"></activity>
     </application>
 
 </manifest>

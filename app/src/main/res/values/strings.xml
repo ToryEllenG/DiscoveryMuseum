@@ -8,4 +8,11 @@
         <item>Friday</item>
         <item>Saturday</item>
     </string-array>
+
+    <string-array name="age">
+        <item></item>
+        <item>0--2</item>
+        <item>3--5</item>
+        <item>6--8+</item>
+    </string-array>
 </resources>

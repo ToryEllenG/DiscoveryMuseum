@@ -1,4 +1,4 @@
-package com.example.troygbv.discoverymuseum;
+package com.example.troygbv.discoverymuseum.Home;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -8,11 +8,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
+
+import com.example.troygbv.discoverymuseum.R;
 
 public class FragmentSupport extends Fragment {
 
     ImageButton donate;
+    Button support;
 
     public FragmentSupport(){
         //required empty constructor
@@ -34,6 +38,16 @@ public class FragmentSupport extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://iexploremore.wufoo.com/forms/qqhpinm1rhznek/"));
+                startActivity(browserIntent);
+            }
+        });
+
+        support = (Button)view.findViewById(R.id.supportBT);
+
+        support.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.iexploremore.com/sponsor-donate/"));
                 startActivity(browserIntent);
             }
         });

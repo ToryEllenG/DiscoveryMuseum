@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.troygbv.discoverymuseum.FragmentExhibits">
+    tools:context="com.example.troygbv.discoverymuseum.Home.FragmentExhibits">
 
     <ListView
         android:id="@android:id/list"

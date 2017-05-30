@@ -1,11 +1,7 @@
-package com.example.troygbv.discoverymuseum;
+package com.example.troygbv.discoverymuseum.Home;
 
-import android.app.Activity;
 import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import java.util.List;
+import com.example.troygbv.discoverymuseum.R;
 
 public class FragmentAbout extends Fragment {
 
@@ -42,9 +38,9 @@ public class FragmentAbout extends Fragment {
         instagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://www.instagram.com/iexploremore/");
+                //check if instagram app is installed
+                Uri uri = Uri.parse("https://www.instagram.com/_u/iexploremore");
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, uri);
-
                 browserIntent.setPackage("com.instagram.android");
                 try {
                     startActivity(browserIntent);
@@ -57,21 +53,35 @@ public class FragmentAbout extends Fragment {
         facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/ExploreMoreDiscoveryMuseum/"));
-                startActivity(browserIntent);
+                Intent browserIntent;
+                try {
+                    //check if phone has facebook app installed
+                    getContext().getPackageManager().getPackageInfo("com.facebook.katana", 0);
+                    browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/306198892738391"));
+                    browserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                } catch (Exception e){
+                    browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://facebook.com/ExploreMoreDiscoveryMuseum"));
+                }
+                getContext().startActivity(browserIntent);
             }
         });
 
         twitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/iexploremore"));
-                startActivity(browserIntent);
+                try {
+                    //check if twitter is installed
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("twitter://user?screen_name=iexploremore"));
+                    startActivity(browserIntent);
+                } catch (Exception e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/iexploremore")));
+                }
             }
         });
 
         return view;
     }
+
 
 
 }
