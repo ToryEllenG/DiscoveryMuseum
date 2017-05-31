@@ -2,6 +2,7 @@ package com.example.troygbv.discoverymuseum.Games;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.os.Handler;
 import android.support.v7.widget.AppCompatDrawableManager;
 import android.widget.Button;
 import android.widget.GridLayout;
@@ -48,6 +49,18 @@ public class MemoryButton extends android.support.v7.widget.AppCompatButton {
 
     public void setMatched(boolean matched) {
         isMatched = matched;
+
+        final Toast toast = Toast.makeText(this.getContext(), "It's a Match!", Toast.LENGTH_SHORT);
+        toast.show();
+
+        //handler to shorten toast time
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                toast.cancel();
+            }
+        }, 1000);
     }
 
     public int getFrontDrawableId() {
@@ -57,13 +70,23 @@ public class MemoryButton extends android.support.v7.widget.AppCompatButton {
     public void flip() {
 
         if (isMatched){
-
             return;
-
     }
 
         else if (isFlipped){
             setBackground(back);
+
+            final Toast toast = Toast.makeText(this.getContext(), "Try Again!", Toast.LENGTH_SHORT);
+            toast.show();
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    toast.cancel();
+                }
+            }, 700);
+
             isFlipped = false;
         } else {
             setBackground(front);

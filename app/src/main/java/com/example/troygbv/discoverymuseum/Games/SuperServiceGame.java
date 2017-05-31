@@ -1,12 +1,15 @@
 package com.example.troygbv.discoverymuseum.Games;
 
+import android.app.Activity;
 import android.graphics.PorterDuff;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +24,8 @@ import java.util.Random;
 public class SuperServiceGame extends AppCompatActivity {
 
     TextView tv_info, tv_word;
+
+    ImageView picture;
 
     EditText et_guess;
 
@@ -38,11 +43,24 @@ public class SuperServiceGame extends AppCompatActivity {
             "door",
             "bumper",
             "window",
-            "windshield",
             "trunk",
             "wheel",
             "gas",
             "tire"
+    };
+
+    int[] images = {
+            R.drawable.hood,
+            R.drawable.mirror,
+            R.drawable.headlight,
+            R.drawable.radiator,
+            R.drawable.door,
+            R.drawable.bumper,
+            R.drawable.window,
+            R.drawable.trunk,
+            R.drawable.wheel,
+            R.drawable.gas,
+            R.drawable.tire
     };
 
     //Edit this to show picture when scrambled word pops up
@@ -57,6 +75,17 @@ public class SuperServiceGame extends AppCompatActivity {
         tv_word = (TextView) findViewById(R.id.tv_word);
 
         et_guess = (EditText) findViewById(R.id.et_guess);
+
+        et_guess.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (!hasFocus) {
+                    hideKeyboard(view);
+                }
+            }
+        });
+
+        picture = (ImageView) findViewById(R.id.picture);
 
         b_check = (Button) findViewById(R.id.b_check);
         b_new = (Button) findViewById(R.id.b_new);
@@ -97,6 +126,13 @@ public class SuperServiceGame extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
     }
 
+    //method to hide keyboard
+    public void hideKeyboard(View view) {
+        InputMethodManager inputMethodManager =(InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+    }
+
+
     //shuffle word
     private String shuffleWord(String word){
         List<String> letters = Arrays.asList(word.split(""));
@@ -111,7 +147,10 @@ public class SuperServiceGame extends AppCompatActivity {
     private void newGame(){
         currentWord = dictionary[r.nextInt(dictionary.length)];
 
+        picture.setImageResource(images[r.nextInt(images.length)]);
+
         tv_word.setText(shuffleWord(currentWord));
+
 
         //clear field
         et_guess.setText("");
@@ -126,5 +165,6 @@ public class SuperServiceGame extends AppCompatActivity {
         onBackPressed();
         return true;
     }
+
 
 }

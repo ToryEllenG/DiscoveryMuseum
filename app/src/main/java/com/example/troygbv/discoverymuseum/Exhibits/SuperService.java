@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.troygbv.discoverymuseum.Games.KitchenGame;
 import com.example.troygbv.discoverymuseum.Games.SuperServiceGame;
 import com.example.troygbv.discoverymuseum.R;
 

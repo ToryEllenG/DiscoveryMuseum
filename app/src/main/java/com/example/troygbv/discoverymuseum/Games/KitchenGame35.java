@@ -4,14 +4,14 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridLayout;
-import android.widget.Toast;
 
 import com.example.troygbv.discoverymuseum.R;
 
 import java.util.Random;
 
-public class KitchenGame extends AppCompatActivity implements View.OnClickListener {
+public class KitchenGame35 extends AppCompatActivity implements View.OnClickListener{
 
     private int numberOfElements;
     private MemoryButton[] buttons;
@@ -24,16 +24,18 @@ public class KitchenGame extends AppCompatActivity implements View.OnClickListen
 
     private boolean isBusy = false;
 
+    private Button reset;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kitchen_game);
+        setContentView(R.layout.activity_kitchen_game35);
         setTitle("Farmer's Matching"); //Change the title later
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
-        GridLayout gridLayout = (GridLayout) findViewById(R.id.grid_layout_4x4);
+        GridLayout gridLayout = (GridLayout) findViewById(R.id.grid_layout_3x3);
 
         gridLayout.setUseDefaultMargins(true);
 
@@ -52,8 +54,8 @@ public class KitchenGame extends AppCompatActivity implements View.OnClickListen
         buttonGraphics[3] = R.drawable.button_4;
         buttonGraphics[4] = R.drawable.button_5;
         buttonGraphics[5] = R.drawable.button_6;
-        buttonGraphics[6] = R.drawable.button_7;
-        buttonGraphics[7] = R.drawable.button_8;
+        //      buttonGraphics[6] = R.drawable.button_7;
+//        buttonGraphics[7] = R.drawable.button_8;
 
         buttonGraphicLocations = new int[numberOfElements];
 
@@ -69,6 +71,15 @@ public class KitchenGame extends AppCompatActivity implements View.OnClickListen
             }
         }
 
+        reset = (Button)findViewById(R.id.resetButton);
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(getIntent());
+            }
+        });
+
 
     }
 
@@ -83,7 +94,7 @@ public class KitchenGame extends AppCompatActivity implements View.OnClickListen
         for (int i = 0; i < numberOfElements; i++) {
 
             int temp = buttonGraphicLocations[i];
-            int swapIndex = rand.nextInt(16);
+            int swapIndex = rand.nextInt(6);
 
             buttonGraphicLocations[i] = buttonGraphicLocations[swapIndex];
 
@@ -108,18 +119,19 @@ public class KitchenGame extends AppCompatActivity implements View.OnClickListen
         MemoryButton button = (MemoryButton) v;
 
         if (button.isMatched){
-            Toast match = Toast.makeText(KitchenGame.this, "Successful Match!", Toast.LENGTH_SHORT);
-            match.show();
+
         }
 
 
         if (selectedButton1 == null) {
+            //flip over button if hasn't been clicked yet
             selectedButton1 = button;
             selectedButton1.flip();
             return;
         }
 
         if (selectedButton1.getId() == button.getId()) {
+            //selects same thing twice
             return;
         }
 
@@ -153,7 +165,7 @@ public class KitchenGame extends AppCompatActivity implements View.OnClickListen
                     isBusy = false;
 
                 }
-            }, 500);
+            }, 700);
 
 
         }

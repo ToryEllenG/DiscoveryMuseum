@@ -37,8 +37,10 @@
         <activity android:name=".Exhibits.Meadow" />
         <activity android:name=".Exhibits.Outdoors" />
         <activity android:name=".Exhibits.Dentist" />
-        <activity android:name=".Games.KitchenGame" />
-        <activity android:name=".Games.SuperServiceGame"></activity>
+        <activity android:name=".Games.KitchenGame68" />
+        <activity android:name=".Games.SuperServiceGame" />
+        <activity android:name=".Games.KitchenGame02" />
+        <activity android:name=".Games.KitchenGame35"></activity>
     </application>
 
 </manifest>

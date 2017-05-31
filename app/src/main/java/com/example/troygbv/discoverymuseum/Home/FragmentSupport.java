@@ -15,7 +15,7 @@ import com.example.troygbv.discoverymuseum.R;
 
 public class FragmentSupport extends Fragment {
 
-    ImageButton donate;
+    ImageButton donate, mail;
     Button support;
 
     public FragmentSupport(){
@@ -33,6 +33,7 @@ public class FragmentSupport extends Fragment {
         View view = inflater.inflate(R.layout.activity_fragment_support, container, false);
 
         donate = (ImageButton)view.findViewById(R.id.donateButton);
+        mail = (ImageButton) view.findViewById(R.id.mailingList);
 
         donate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +43,13 @@ public class FragmentSupport extends Fragment {
             }
         });
 
+        mail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://visitor.r20.constantcontact.com/manage/optin?v=001j9jAEm-uzFgNvBCePEqs4-Hn6UK8gkPTuue_9rfIPU84CmsE0QYRCqm1uUUkrSj4UWS_UcqehcryCxxzx6gN1SK9OlV3HDvpQL2YMwPnXib6JvljevJkDGLzFOkcTo6yfXCfZLrwTJbNflxZQz4eC-qaPXiaO-18TJ4Z4zvD2gHouP-IX7vshA%3D%3D"));
+                startActivity(browserIntent);
+            }
+        });
         support = (Button)view.findViewById(R.id.supportBT);
 
         support.setOnClickListener(new View.OnClickListener() {

@@ -11,7 +11,9 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.troygbv.discoverymuseum.Games.KitchenGame;
+import com.example.troygbv.discoverymuseum.Games.KitchenGame02;
+import com.example.troygbv.discoverymuseum.Games.KitchenGame35;
+import com.example.troygbv.discoverymuseum.Games.KitchenGame68;
 import com.example.troygbv.discoverymuseum.R;
 
 public class Kitchen extends AppCompatActivity {
@@ -29,6 +31,13 @@ public class Kitchen extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
 
         playBT = (Button)findViewById(R.id.playButton);
+        playBT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Kitchen.this, "Please select your child's age range.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         chooseAge = (Spinner) findViewById(R.id.ageSpinner);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.getApplicationContext(), R.array.age, android.R.layout.simple_spinner_item);
@@ -40,33 +49,37 @@ public class Kitchen extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
+                        playBT.setEnabled(false);
                         break;
                     case 1:
+                        playBT.setEnabled(true);
                         Toast.makeText(Kitchen.this, "Your child is age 0 - 2.", Toast.LENGTH_SHORT).show();
                         playBT.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Intent play = new Intent(Kitchen.this, KitchenGame.class);
+                                Intent play = new Intent(Kitchen.this, KitchenGame02.class);
                                 startActivity(play);
                             }
                         });
                         break;
                     case 2:
+                        playBT.setEnabled(true);
                         Toast.makeText(Kitchen.this, "Your child is age 3 - 5.", Toast.LENGTH_SHORT).show();
                         playBT.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Intent play = new Intent(Kitchen.this, KitchenGame.class);
+                                Intent play = new Intent(Kitchen.this, KitchenGame35.class);
                                 startActivity(play);
                             }
                         });
                         break;
                     case 3:
+                        playBT.setEnabled(true);
                         Toast.makeText(Kitchen.this, "Your child is age 6 - 8+.", Toast.LENGTH_SHORT).show();
                         playBT.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Intent play = new Intent(Kitchen.this, KitchenGame.class);
+                                Intent play = new Intent(Kitchen.this, KitchenGame68.class);
                                 startActivity(play);
                             }
                         });

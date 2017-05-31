@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="com.example.troygbv.discoverymuseum.Home.FragmentSupport">
 
     <ImageButton
         android:id="@+id/donateButton"
         style="@android:style/Widget.Holo.Light.ImageButton"
-        android:layout_width="198dp"
-        android:layout_height="178dp"
+        android:layout_width="150dp"
+        android:layout_height="136dp"
         android:background="@null"
         android:scaleType="fitXY"
         app:srcCompat="@drawable/donate"
@@ -18,12 +26,9 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="29dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintVertical_bias="0.457" />
+        app:layout_constraintVertical_bias="0.498" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -56,4 +61,23 @@
         app:layout_constraintTop_toBottomOf="@+id/donateButton"
         app:layout_constraintVertical_bias="0.0" />
 
+    <ImageButton
+        android:id="@+id/mailingList"
+        style="@android:style/Widget.Holo.Light.ImageButton"
+        android:layout_width="140dp"
+        android:layout_height="136dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.496"
+        app:srcCompat="@drawable/mailinglist"
+        app:layout_constraintLeft_toRightOf="@+id/donateButton"
+        android:layout_marginLeft="8dp" />
+
 </android.support.constraint.ConstraintLayout>
+</ScrollView>

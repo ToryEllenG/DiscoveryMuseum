@@ -95,11 +95,11 @@ public class FragmentVisitUs extends Fragment {
         mMapView.onPause();
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        mMapView.onDestroy();
-    }
+ //   @Override
+   // public void onDestroy() {
+     //   super.onDestroy();
+       // mMapView.onDestroy();
+    //}
 
     @Override
     public void onLowMemory() {
