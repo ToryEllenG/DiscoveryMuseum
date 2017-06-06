@@ -1,5 +1,6 @@
 package com.example.troygbv.discoverymuseum.Games;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,6 +33,7 @@ public class KitchenGame02 extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kitchen_game02);
         setTitle("Farmer's Matching"); //Change the title later
+
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
@@ -137,6 +139,8 @@ public class KitchenGame02 extends AppCompatActivity implements View.OnClickList
         }
 
         if (selectedButton1.getFrontDrawableId() == button.getFrontDrawableId()) {
+
+
             button.flip();
             button.setMatched(true);
             selectedButton1.setMatched(true);

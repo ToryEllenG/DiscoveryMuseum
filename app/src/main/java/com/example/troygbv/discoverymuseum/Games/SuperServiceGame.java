@@ -35,6 +35,8 @@ public class SuperServiceGame extends AppCompatActivity {
 
     String currentWord;
 
+    int currentPic;
+
     String[] dictionary = {
             "hood",
             "mirror",
@@ -62,8 +64,6 @@ public class SuperServiceGame extends AppCompatActivity {
             R.drawable.gas,
             R.drawable.tire
     };
-
-    //Edit this to show picture when scrambled word pops up
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,7 +133,7 @@ public class SuperServiceGame extends AppCompatActivity {
     }
 
 
-    //shuffle word
+    //shuffle word method
     private String shuffleWord(String word){
         List<String> letters = Arrays.asList(word.split(""));
         Collections.shuffle(letters);
@@ -147,10 +147,10 @@ public class SuperServiceGame extends AppCompatActivity {
     private void newGame(){
         currentWord = dictionary[r.nextInt(dictionary.length)];
 
-        picture.setImageResource(images[r.nextInt(images.length)]);
+        currentPic = images[r.nextInt(images.length)];
 
+        picture.setImageResource(currentPic);
         tv_word.setText(shuffleWord(currentWord));
-
 
         //clear field
         et_guess.setText("");

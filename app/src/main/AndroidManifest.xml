@@ -40,7 +40,10 @@
         <activity android:name=".Games.KitchenGame68" />
         <activity android:name=".Games.SuperServiceGame" />
         <activity android:name=".Games.KitchenGame02" />
-        <activity android:name=".Games.KitchenGame35"></activity>
+        <activity android:name=".Games.KitchenGame35" />
+        <activity android:name=".Games.TVStudioGame" />
+        <activity android:name=".Games.TVStudioGameResults" />
+        <activity android:name=".Games.ArtSmartGame"></activity>
     </application>
 
 </manifest>
