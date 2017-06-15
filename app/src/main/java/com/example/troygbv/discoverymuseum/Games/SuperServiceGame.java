@@ -43,8 +43,8 @@ public class SuperServiceGame extends AppCompatActivity {
     int counter = 0;
 
     String[] dictionary = {
-            "muffler",
             "hood",
+            "muffler",
             "mirror",
             "headlight",
             "radiator",
@@ -53,13 +53,12 @@ public class SuperServiceGame extends AppCompatActivity {
             "window",
             "trunk",
             "wheel",
-            "gas",
             "tire"
     };
 
     int[] images = {
-            R.drawable.muffler,
             R.drawable.hood,
+            R.drawable.muffler,
             R.drawable.mirror,
             R.drawable.headlight,
             R.drawable.radiator,
@@ -68,7 +67,6 @@ public class SuperServiceGame extends AppCompatActivity {
             R.drawable.window,
             R.drawable.trunk,
             R.drawable.wheel,
-            R.drawable.gas,
             R.drawable.tire
     };
 

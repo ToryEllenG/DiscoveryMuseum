@@ -79,6 +79,7 @@ public class TVStudioGameResults extends AppCompatActivity {
         playAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 Intent i = new Intent(TVStudioGameResults.this, TVStudioGame.class);
                 startActivity(i);
             }

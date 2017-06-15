@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.troygbv.discoverymuseum.Games.TVStudioGame;
+import com.example.troygbv.discoverymuseum.Home.FragmentExhibits;
+import com.example.troygbv.discoverymuseum.Home.MainActivity;
 import com.example.troygbv.discoverymuseum.R;
 
 public class TVStudio extends AppCompatActivity {
@@ -36,6 +38,9 @@ public class TVStudio extends AppCompatActivity {
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
+        finish();
+        Intent i = new Intent(TVStudio.this, MainActivity.class);
+        startActivity(i);
         return true;
     }
 }

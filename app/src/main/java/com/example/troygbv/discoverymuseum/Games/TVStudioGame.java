@@ -2,6 +2,7 @@ package com.example.troygbv.discoverymuseum.Games;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.InstrumentationInfo;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -217,12 +218,13 @@ public class TVStudioGame extends AppCompatActivity {
                 wordChoices.putString("fifteenthWord", word15string);
                 i.putExtras(wordChoices);
 
-                if(word1string.isEmpty() || word2string.isEmpty() || word3string.isEmpty() || word4string.isEmpty() || word5string.isEmpty() || word6string.isEmpty() || word7string.isEmpty() || word8string.isEmpty() || word9string.isEmpty() || word10string.isEmpty() || word11string.isEmpty() || word12string.isEmpty() || word13string.isEmpty() || word14string.isEmpty() || word15string.isEmpty()) {
+                //uncomment to make all fields required
+               /** if(word1string.isEmpty() || word2string.isEmpty() || word3string.isEmpty() || word4string.isEmpty() || word5string.isEmpty() || word6string.isEmpty() || word7string.isEmpty() || word8string.isEmpty() || word9string.isEmpty() || word10string.isEmpty() || word11string.isEmpty() || word12string.isEmpty() || word13string.isEmpty() || word14string.isEmpty() || word15string.isEmpty()) {
                     Toast.makeText(TVStudioGame.this, "You didn't fill in all of the words!", Toast.LENGTH_LONG).show();
                 }
-                else {
+                else { */
                     startActivity(i);
-                }
+               // }
             }
         });
     }
@@ -235,7 +237,10 @@ public class TVStudioGame extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
+        finish();
         onBackPressed();
+        Intent i = new Intent(TVStudioGame.this, TVStudio.class);
+        startActivity(i);
         return true;
     }
 
