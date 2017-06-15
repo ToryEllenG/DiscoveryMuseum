@@ -1,6 +1,7 @@
 package com.example.troygbv.discoverymuseum.Games;
 
 import android.app.Activity;
+import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 
 import com.example.troygbv.discoverymuseum.Exhibits.SuperService;
 import com.example.troygbv.discoverymuseum.R;
+
+import org.w3c.dom.Text;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -37,7 +40,10 @@ public class SuperServiceGame extends AppCompatActivity {
 
     int currentPic;
 
+    int counter = 0;
+
     String[] dictionary = {
+            "muffler",
             "hood",
             "mirror",
             "headlight",
@@ -52,6 +58,7 @@ public class SuperServiceGame extends AppCompatActivity {
     };
 
     int[] images = {
+            R.drawable.muffler,
             R.drawable.hood,
             R.drawable.mirror,
             R.drawable.headlight,
@@ -92,12 +99,17 @@ public class SuperServiceGame extends AppCompatActivity {
 
         r = new Random();
 
+       /** Resources res = getResources();
+        dictionary = res.getStringArray(R.array.carParts);
+        ((TextView) findViewById(R.id.tv_word)).setText(dictionary[counter]);
+*/
+
         newGame();
 
         b_check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              if(et_guess.getText().toString().equalsIgnoreCase(currentWord)) {
+              if(et_guess.getText().toString().equalsIgnoreCase(dictionary[counter])) {
                   tv_info.setText("Correct!");
 
                   Toast correct = Toast.makeText(SuperServiceGame.this, "Correct!", Toast.LENGTH_SHORT);
@@ -145,12 +157,21 @@ public class SuperServiceGame extends AppCompatActivity {
     }
 
     private void newGame(){
-        currentWord = dictionary[r.nextInt(dictionary.length)];
 
-        currentPic = images[r.nextInt(images.length)];
+    //    currentWord = dictionary[r.nextInt(dictionary.length)];
 
-        picture.setImageResource(currentPic);
-        tv_word.setText(shuffleWord(currentWord));
+       // currentPic = images[r.nextInt(images.length)];
+
+
+
+        counter++;
+        if (counter >= dictionary.length)
+            counter = 0;
+        tv_word.setText(shuffleWord(dictionary [counter]));
+
+        if (counter >= images.length)
+            counter =0;
+        picture.setImageResource(images[counter]);
 
         //clear field
         et_guess.setText("");

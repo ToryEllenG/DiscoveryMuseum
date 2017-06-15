@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">Explore More Discovery Museum</string>
     <string name="instructions">Select a square and try to find its matching fruit or vegetable! When all done, click the reset button at the bottom to play again, or the back button at the top to quit.</string>
+    <string name="start_new">New</string>
+    <string name="brush">Brush</string>
+    <string name = "erase">Erase</string>
+    <string name= "save">Save</string>
+    <string name = "paint">Paint</string>
+    <string name="sml">Small</string>
+    <string name="med">Medium</string>
+    <string name="lrg">Large</string>
+    <string name="madLibInstructions">Fill in the blanks below with the correct type of word. When done, select "See the Results!" at the bottom of the page.</string>
 
     <string-array name="days">
         <item>Tuesday</item>
@@ -16,4 +25,20 @@
         <item>3--5</item>
         <item>6--8+</item>
     </string-array>
+
+    <string-array name="carParts">
+        <item></item>
+        <item>hood</item>
+        <item>mirror</item>
+        <item>headlight</item>
+        <item>radiator</item>
+        <item>door</item>
+        <item>bumper</item>
+        <item>window</item>
+        <item>trunk</item>
+        <item>wheel</item>
+        <item>gas</item>
+        <item>tire</item>
+    </string-array>
+
 </resources>
