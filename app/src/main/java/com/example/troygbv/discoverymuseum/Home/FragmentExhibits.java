@@ -12,8 +12,12 @@ import android.widget.ListView;
 import com.example.troygbv.discoverymuseum.Exhibits.ArtSmart;
 import com.example.troygbv.discoverymuseum.Exhibits.Construct;
 import com.example.troygbv.discoverymuseum.Exhibits.Dentist;
+import com.example.troygbv.discoverymuseum.Exhibits.DiscoveryTree;
 import com.example.troygbv.discoverymuseum.Exhibits.Farm;
+import com.example.troygbv.discoverymuseum.Exhibits.GamesGalore;
+import com.example.troygbv.discoverymuseum.Exhibits.ImaginationPlayground;
 import com.example.troygbv.discoverymuseum.Exhibits.Kitchen;
+import com.example.troygbv.discoverymuseum.Exhibits.MakerCity;
 import com.example.troygbv.discoverymuseum.Exhibits.Meadow;
 import com.example.troygbv.discoverymuseum.Exhibits.MedicalCenter;
 import com.example.troygbv.discoverymuseum.Exhibits.Outdoors;
@@ -109,6 +113,22 @@ public class FragmentExhibits extends ListFragment {
             case 11: Intent dentist = new Intent(getActivity(), Dentist.class);
                 startActivity(dentist);
                 break;
+
+            case 12: Intent tree = new Intent(getActivity(), DiscoveryTree.class);
+                startActivity(tree);
+                break;
+
+            case 13: Intent playground = new Intent(getActivity(), ImaginationPlayground.class);
+                startActivity(playground);
+                break;
+
+            case 14: Intent games = new Intent(getActivity(), GamesGalore.class);
+                startActivity(games);
+                break;
+
+            case 15: Intent maker = new Intent(getActivity(), MakerCity.class);
+                startActivity(maker);
+                break;
         }
     }
 
@@ -126,6 +146,10 @@ public class FragmentExhibits extends ListFragment {
         idImages.add(R.drawable.meadow);
         idImages.add(R.drawable.camp);
         idImages.add(R.drawable.dentist);
+        idImages.add(R.drawable.discoverytree);
+        idImages.add(R.drawable.imaginationplayground);
+        idImages.add(R.drawable.gamesgalore);
+        idImages.add(R.drawable.makercity);
         return idImages;
     }
 
@@ -143,6 +167,10 @@ public class FragmentExhibits extends ListFragment {
         nameList.add("Over in the Meadow");
         nameList.add("Great Outdoors");
         nameList.add("Friendly City Dental Exhibit");
+        nameList.add("Discovery Tree");
+        nameList.add("Imagination Playground");
+        nameList.add("Games Galore");
+        nameList.add("Maker City Makerspace");
         return nameList;
     }
 
