@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,8 +13,8 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="272dp"
-        android:layout_height="208dp"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
         app:srcCompat="@drawable/medicalpicture"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
@@ -24,11 +29,11 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="357dp"
-        android:layout_height="143dp"
+        android:layout_width="514dp"
+        android:layout_height="252dp"
         android:text="Ever wonder how your body looks inside?  How can you keep those organs healthy?  Learn more about the exciting world of medicine in this exhibit that features a full-size ambulance courtesy of GW Ambulance."
         android:textAlignment="center"
-        android:textSize="18sp"
+        android:textSize="30sp"
         android:textStyle="italic"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
@@ -38,5 +43,6 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.157" />
 </android.support.constraint.ConstraintLayout>
+</ScrollView>

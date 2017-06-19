@@ -1,6 +1,7 @@
 package com.example.troygbv.discoverymuseum.Exhibits;
 
 import android.content.Intent;
+import android.hardware.camera2.params.BlackLevelPattern;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
