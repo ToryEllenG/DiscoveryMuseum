@@ -41,7 +41,7 @@ public class Kitchen extends AppCompatActivity {
 
         chooseAge = (Spinner) findViewById(R.id.ageSpinner);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.getApplicationContext(), R.array.age, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.getApplicationContext(), R.array.age, R.layout.spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         chooseAge.setAdapter(adapter);
 
