@@ -35,6 +35,7 @@ public class FragmentExhibits extends ListFragment {
     ListView lv;
     ItemAdapter adapter;
     ArrayList<Integer> idImages;
+    ArrayList<Integer> textImages;
     ArrayList<String> nameList;
 
    public FragmentExhibits(){
@@ -56,7 +57,9 @@ public class FragmentExhibits extends ListFragment {
         idImages = getList();
         nameList = new ArrayList<>();
         nameList = getNameList();
-        adapter = new ItemAdapter(getActivity(), idImages, nameList);
+        textImages = new ArrayList<>();
+        textImages = getTextImages();
+        adapter = new ItemAdapter(getActivity(), idImages, textImages, nameList);
         lv.setAdapter(adapter);
 
         return view;
@@ -152,6 +155,28 @@ public class FragmentExhibits extends ListFragment {
         idImages.add(R.drawable.makercity);
         return idImages;
     }
+
+    public ArrayList<Integer> getTextImages(){
+        textImages = new ArrayList<>();
+        textImages.add(R.drawable.gamepad_variant);
+        textImages.add(R.drawable.transparent);
+        textImages.add(R.drawable.transparent);
+        textImages.add(R.drawable.gamepad_variant);
+        textImages.add(R.drawable.transparent);
+        textImages.add(R.drawable.gamepad_variant);
+        textImages.add(R.drawable.transparent);
+        textImages.add(R.drawable.transparent);
+        textImages.add(R.drawable.gamepad_variant);
+        textImages.add(R.drawable.transparent);
+        textImages.add(R.drawable.transparent);
+        textImages.add(R.drawable.transparent);
+        textImages.add(R.drawable.box_new);
+        textImages.add(R.drawable.box_new);
+        textImages.add(R.drawable.box_new);
+        textImages.add(R.drawable.box_new);
+        return textImages;
+    }
+
 
     public ArrayList<String> getNameList(){
         nameList = new ArrayList<>();

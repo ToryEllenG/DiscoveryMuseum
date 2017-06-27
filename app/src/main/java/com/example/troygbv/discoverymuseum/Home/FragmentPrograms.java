@@ -80,7 +80,7 @@ public class FragmentPrograms extends Fragment {
                         program.setImageResource(R.drawable.saturday);
                         programs.setText("Discovery Cart");
                         date.setText("Saturdays 11:00 AM - 2:00 PM");
-                        desc.setText("Keep an eye out for the new Discovery Cart where you'll explore science, world culture, engineering and more...perfect for curious kids of all ages.");
+                        desc.setText("Keep an eye out for the new_box Discovery Cart where you'll explore science, world culture, engineering and more...perfect for curious kids of all ages.");
                         break;
                 }
             }
