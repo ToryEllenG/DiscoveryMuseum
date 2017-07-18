@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.troygbv.discoverymuseum.Exhibits.ArtSmart;
@@ -29,8 +32,7 @@ import com.example.troygbv.discoverymuseum.R;
 
 import java.util.ArrayList;
 
-
-public class FragmentExhibits extends ListFragment {
+public class FragmentExhibits extends AppCompatActivity {
 
     ListView lv;
     ItemAdapter adapter;
@@ -38,101 +40,109 @@ public class FragmentExhibits extends ListFragment {
     ArrayList<Integer> textImages;
     ArrayList<String> nameList;
 
-   public FragmentExhibits(){
-        //required empty constructor
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
+        setContentView(R.layout.activity_fragment_exhibits);
 
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_fragment_exhibits, container, false);
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
 
-        lv = (ListView) view.findViewById(android.R.id.list);
+        lv = (ListView) findViewById(android.R.id.list);
         idImages = new ArrayList<>();
         idImages = getList();
         nameList = new ArrayList<>();
         nameList = getNameList();
         textImages = new ArrayList<>();
         textImages = getTextImages();
-        adapter = new ItemAdapter(getActivity(), idImages, textImages, nameList);
+        adapter = new ItemAdapter(FragmentExhibits.this, idImages, textImages, nameList);
         lv.setAdapter(adapter);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        return view;
-    }
+                switch (position) {
+                    case 0:
+                        Intent kitchen = new Intent(FragmentExhibits.this, Kitchen.class);
+                        startActivity(kitchen);
+                        break;
 
-    @Override
-    public void onListItemClick(ListView l, View v, int position, long id) {
-        switch ( position )
-        {
-            case 0: Intent kitchen = new Intent(getActivity(), Kitchen.class);
-                startActivity(kitchen);
-                break;
+                    case 1:
+                        Intent construct = new Intent(FragmentExhibits.this, Construct.class);
+                        startActivity(construct);
+                        break;
 
-            case 1: Intent construct = new Intent(getActivity(), Construct.class);
-                startActivity(construct);
-                break;
+                    case 2:
+                        Intent medicalCenter = new Intent(FragmentExhibits.this, MedicalCenter.class);
+                        startActivity(medicalCenter);
+                        break;
 
-            case 2: Intent medicalCenter = new Intent(getActivity(), MedicalCenter.class);
-                startActivity(medicalCenter);
-                break;
+                    case 3:
+                        Intent tvStudio = new Intent(FragmentExhibits.this, TVStudio.class);
+                        startActivity(tvStudio);
+                        break;
 
-            case 3: Intent tvStudio = new Intent(getActivity(), TVStudio.class);
-                startActivity(tvStudio);
-                break;
+                    case 4:
+                        Intent science = new Intent(FragmentExhibits.this, Science.class);
+                        startActivity(science);
+                        break;
 
-            case 4: Intent science = new Intent(getActivity(), Science.class);
-                startActivity(science);
-                break;
+                    case 5:
+                        Intent superService = new Intent(FragmentExhibits.this, SuperService.class);
+                        startActivity(superService);
+                        break;
 
-            case 5: Intent superService = new Intent(getActivity(), SuperService.class);
-                startActivity(superService);
-                break;
+                    case 6:
+                        Intent theater = new Intent(FragmentExhibits.this, Theater.class);
+                        startActivity(theater);
+                        break;
 
-            case 6: Intent theater = new Intent(getActivity(), Theater.class);
-                startActivity(theater);
-                break;
+                    case 7:
+                        Intent farm = new Intent(FragmentExhibits.this, Farm.class);
+                        startActivity(farm);
+                        break;
 
-            case 7: Intent farm = new Intent(getActivity(), Farm.class);
-                startActivity(farm);
-                break;
+                    case 8:
+                        Intent artSmart = new Intent(FragmentExhibits.this, ArtSmart.class);
+                        startActivity(artSmart);
+                        break;
 
-            case 8: Intent artSmart = new Intent(getActivity(), ArtSmart.class);
-                startActivity(artSmart);
-                break;
+                    case 9:
+                        Intent meadow = new Intent(FragmentExhibits.this, Meadow.class);
+                        startActivity(meadow);
+                        break;
 
-            case 9: Intent meadow = new Intent(getActivity(), Meadow.class);
-                startActivity(meadow);
-                break;
+                    case 10:
+                        Intent outdoors = new Intent(FragmentExhibits.this, Outdoors.class);
+                        startActivity(outdoors);
+                        break;
 
-            case 10: Intent outdoors = new Intent(getActivity(), Outdoors.class);
-                startActivity(outdoors);
-                break;
+                    case 11:
+                        Intent dentist = new Intent(FragmentExhibits.this, Dentist.class);
+                        startActivity(dentist);
+                        break;
 
-            case 11: Intent dentist = new Intent(getActivity(), Dentist.class);
-                startActivity(dentist);
-                break;
+                    case 12:
+                        Intent tree = new Intent(FragmentExhibits.this, DiscoveryTree.class);
+                        startActivity(tree);
+                        break;
 
-            case 12: Intent tree = new Intent(getActivity(), DiscoveryTree.class);
-                startActivity(tree);
-                break;
+                    case 13:
+                        Intent playground = new Intent(FragmentExhibits.this, ImaginationPlayground.class);
+                        startActivity(playground);
+                        break;
 
-            case 13: Intent playground = new Intent(getActivity(), ImaginationPlayground.class);
-                startActivity(playground);
-                break;
+                    case 14:
+                        Intent games = new Intent(FragmentExhibits.this, GamesGalore.class);
+                        startActivity(games);
+                        break;
 
-            case 14: Intent games = new Intent(getActivity(), GamesGalore.class);
-                startActivity(games);
-                break;
-
-            case 15: Intent maker = new Intent(getActivity(), MakerCity.class);
-                startActivity(maker);
-                break;
-        }
+                    case 15:
+                        Intent maker = new Intent(FragmentExhibits.this, MakerCity.class);
+                        startActivity(maker);
+                        break;
+                }
+            }
+        });
     }
 
     public ArrayList<Integer> getList(){
@@ -199,4 +209,11 @@ public class FragmentExhibits extends ListFragment {
         return nameList;
     }
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        Intent i = new Intent(FragmentExhibits.this, NewLandingPage.class);
+        startActivity(i);
+        return true;
+    }
 }

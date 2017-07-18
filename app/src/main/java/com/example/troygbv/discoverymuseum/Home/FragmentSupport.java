@@ -5,6 +5,8 @@ import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,27 +15,21 @@ import android.widget.ImageButton;
 
 import com.example.troygbv.discoverymuseum.R;
 
-public class FragmentSupport extends Fragment {
+public class FragmentSupport extends AppCompatActivity {
 
     ImageButton donate, mail;
     Button support;
 
-    public FragmentSupport(){
-        //required empty constructor
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
+        setContentView(R.layout.activity_fragment_support);
 
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_fragment_support, container, false);
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
 
-        donate = (ImageButton)view.findViewById(R.id.donateButton);
-        mail = (ImageButton) view.findViewById(R.id.mailingList);
+        donate = (ImageButton)findViewById(R.id.donateButton);
+        mail = (ImageButton)findViewById(R.id.mailingList);
 
         donate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +46,7 @@ public class FragmentSupport extends Fragment {
                 startActivity(browserIntent);
             }
         });
-        support = (Button)view.findViewById(R.id.supportBT);
+        support = (Button)findViewById(R.id.supportBT);
 
         support.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +56,11 @@ public class FragmentSupport extends Fragment {
             }
         });
 
+    }
 
-        return view;
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

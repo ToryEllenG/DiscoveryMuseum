@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.troygbv.discoverymuseum.R;
@@ -16,6 +17,7 @@ import com.example.troygbv.discoverymuseum.R;
 public class FragmentAbout extends Fragment {
 
     ImageButton instagram, facebook, twitter;
+    Button website;
 
     public FragmentAbout(){
         //required empty constructor
@@ -34,6 +36,16 @@ public class FragmentAbout extends Fragment {
         instagram = (ImageButton)view.findViewById(R.id.instagram);
         facebook = (ImageButton)view.findViewById(R.id.facebook);
         twitter = (ImageButton)view.findViewById(R.id.twitter);
+        website = (Button)view.findViewById(R.id.websiteButton);
+
+
+        website.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.iexploremore.com/"));
+                startActivity(browserIntent);
+            }
+        });
 
         instagram.setOnClickListener(new View.OnClickListener() {
             @Override

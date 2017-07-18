@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.troygbv.discoverymuseum.Games.TVStudioGame02;
 import com.example.troygbv.discoverymuseum.Games.TVStudioGame35;
 import com.example.troygbv.discoverymuseum.Games.TVStudioGame;
+import com.example.troygbv.discoverymuseum.Home.FragmentExhibits;
 import com.example.troygbv.discoverymuseum.Home.MainActivity;
 import com.example.troygbv.discoverymuseum.R;
 
@@ -101,7 +102,7 @@ public class TVStudio extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         onBackPressed();
         finish();
-        Intent i = new Intent(TVStudio.this, MainActivity.class);
+        Intent i = new Intent(TVStudio.this, FragmentExhibits.class);
         startActivity(i);
         return true;
     }
