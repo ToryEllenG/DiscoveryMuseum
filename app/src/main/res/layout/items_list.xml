@@ -24,7 +24,7 @@
         <TextView
             android:id="@+id/ItemName"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="102dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:padding="2dp"
@@ -40,8 +40,8 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginTop="5dp"
-            app:srcCompat="@drawable/transparent"
-            android:layout_weight="1.50" />
+            android:layout_weight="1.50"
+            app:srcCompat="@drawable/transparent" />
 
     </LinearLayout>
 

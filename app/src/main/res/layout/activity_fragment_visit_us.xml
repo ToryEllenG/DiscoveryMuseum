@@ -97,7 +97,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="Free admission from 4:00 - 7:00PM on the first Friday of the month."
+            android:text="Free admission from 4:00 - 7:00 PM on the first Friday of the month."
             android:layout_gravity="center"
             android:paddingBottom="15sp"/>
 

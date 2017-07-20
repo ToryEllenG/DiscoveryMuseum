@@ -6,15 +6,18 @@
     android:layout_height="match_parent"
     tools:context="com.example.troygbv.discoverymuseum.Home.FragmentExhibits">
 
-    <ListView
+    <GridView
         android:id="@android:id/list"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
         android:paddingBottom="65dp"
         android:layout_marginTop="0dp"
         app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
         android:layout_marginLeft="0dp">
-    </ListView>
+    </GridView>
 
 </RelativeLayout>

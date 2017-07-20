@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ListView;
 
 import com.example.troygbv.discoverymuseum.Exhibits.ArtSmart;
@@ -34,7 +35,7 @@ import java.util.ArrayList;
 
 public class FragmentExhibits extends AppCompatActivity {
 
-    ListView lv;
+    GridView lv;
     ItemAdapter adapter;
     ArrayList<Integer> idImages;
     ArrayList<Integer> textImages;
@@ -48,7 +49,7 @@ public class FragmentExhibits extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
-        lv = (ListView) findViewById(android.R.id.list);
+        lv = (GridView) findViewById(android.R.id.list);
         idImages = new ArrayList<>();
         idImages = getList();
         nameList = new ArrayList<>();
