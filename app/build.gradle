@@ -6,9 +6,9 @@ android {
     defaultConfig {
         applicationId "com.iexploremoreapps.discoverymuseum"
         minSdkVersion 19
-        targetSdkVersion 21
-        versionCode 6
-        versionName "2.1"
+        targetSdkVersion 23
+        versionCode 11
+        versionName "2.2.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -28,7 +28,7 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:design:25.3.1'
     compile 'com.felipecsl:gifimageview:2.1.0'
-    compile 'org.apache.directory.studio:org.apache.commons.io:2.4'
+    compile 'commons-io:commons-io:2.5'
     compile 'com.google.android.gms:play-services-maps:10.2.4'
     testCompile 'junit:junit:4.12'
 }
